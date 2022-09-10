@@ -1,21 +1,22 @@
 {% extends "app/base.html" %}
 {% block content %}
 <div class="content-section">
+    {% if user.is_authenticated %}
     <h2>{{ user.username }}</h2>
     <p class="text-secondary">{{ user.email }}</p>
     <a class="btn btn-primary" href="/manage">Manage Accounts</a>
-    <script>$(document).ready(function () {
-        $('#investments-table').DataTable({
-            scrollY: '800px',
-            sScrollX: '100%',
-            scrollCollapse: true,
-            paging: false,
-        });
-    });
-    </script>
     <div class="container mt-2">
-
-    {{ df_investments_html|safe }}
+        <script>$(document).ready(function () {
+                $('#investments-table').DataTable({
+                    scrollY: '400px',
+                    sScrollX: '100%',
+                    scrollCollapse: true,
+                    paging: false,
+                });
+            });
+        </script>
+        {{ df_investments_html|safe }}
     </div>
+    {% endif %}
 </div>
 {% endblock content %}
