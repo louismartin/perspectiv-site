@@ -2,8 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f'{self.user.username} Profile'
+class BudgetInsightUser(models.Model):
+    app_user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_id = models.CharField(max_length=100)
+    auth_token = models.CharField(max_length=100)
