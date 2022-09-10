@@ -1,7 +1,9 @@
 body {
     background: #fafafa;
     color: #333333;
-    margin-top: 5rem;
+}
+main {
+    padding-top: 60px;  /* Height of navbar */
 }
 
 h1,
@@ -87,3 +89,8 @@ a.article-title:hover {
 .account-heading {
     font-size: 2.5rem;
 }
+
+
+div.dataTables_filter, div.dataTables_length {
+    padding: 50px;
+  }

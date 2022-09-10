@@ -1,27 +1,32 @@
 {% extends "app/base.html" %}
 {% block content %}
-<div class="content-section">
-    {% if user.is_authenticated %}
-        <h2>{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
-        <a class="btn btn-primary" href="/manage">Manage Accounts</a>
-        {% if total_valuation is not None %}
-            <h3>{{ total_valuation }}</h3>
-        {% endif %}
-        {% if df_investments_html is not None %}
-            <div class="container mt-2">
-                <script>$(document).ready(function () {
-                        $('#investments-table').DataTable({
-                            scrollY: '400px',
-                            sScrollX: '100%',
-                            scrollCollapse: true,
-                            paging: false,
-                        });
-                    });
-                </script>
-                {{ df_investments_html|safe }}
-            </div>
-        {% endif %}
-    {% endif %}
+<div class="content-section mt-4">
+{% if user.is_authenticated %}
+
+<div class="row">
+    <h3>{{ user.username }}</h3>
+    <p class="text-secondary">{{ user.email }}</p>
+{% if total_valuation is not None %}
+    <p>Total valuation: {{ total_valuation }}€</p>
+{% endif %}
+</div>
+{% if df_investments_html is not None %}
+<div class="row">
+    <div class="container">
+        <script>$(document).ready(function () {
+                $('#investments-table').DataTable({
+                    scrollY: '400px',
+                    sScrollX: '100%',
+                    scrollCollapse: true,
+                    paging: false,
+                });
+            });
+        </script>
+        {{ df_investments_html|safe }}
+    </div>
+</div>
+{% endif %}
+
+{% endif %}
 </div>
 {% endblock content %}
