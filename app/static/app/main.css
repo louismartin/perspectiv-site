@@ -35,7 +35,7 @@ ul {
     font-weight: 500;
 }
 
-.content-section {
+.content-block {
     background: #ffffff;
     padding: 10px 20px;
     border: 1px solid #dddddd;
@@ -90,7 +90,6 @@ a.article-title:hover {
     font-size: 2.5rem;
 }
 
-
 div.dataTables_filter, div.dataTables_length {
-    padding: 50px;
+    margin-bottom: 10px;
   }
