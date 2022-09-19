@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-gg(ag-u2(%9d#v4ktem9+_ci@u-8*0q7nz6##r9w4t(%8go*qo"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "perspectiv.ovh"]
 
