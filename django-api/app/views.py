@@ -11,7 +11,7 @@ def app(request):
     context = {}
     if df_investments is not None:
         context["df_investments_html"] = df_investments.to_html(table_id="investments-table")
-        total_valuation = df_investments["valuation"].sum()
+        total_valuation = df_investments["valuation"].sum() if "valuation" in df_investments.columns else 0
         # Format the total_valuation with 2 decimals and spaces every 3 digits (instead of commas)
         context["total_valuation"] = f"{total_valuation:,.0f}".replace(",", " ")
         context["last_update"] = df_investments["last_update"].max()
